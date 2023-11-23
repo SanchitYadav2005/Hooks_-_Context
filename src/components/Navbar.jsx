@@ -1,24 +1,22 @@
-import { Component } from "react";
+import { Component } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 class Navbar extends Component {
+  static contextType = ThemeContext;
   render() {
-    return (
-      <nav>
-        <h1>Hook App</h1>
+    const { isLightTheme, light, dark } = this.context;
+    const theme = isLightTheme ? light : dark;
+    return ( 
+      <nav style={{ background: theme.ui, color: theme.syntax }}>
+        <h1>Context App</h1>
         <ul>
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>About</li>
-          </a>
-          <a href="#">
-            <li>Contact</li>
-          </a>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
         </ul>
       </nav>
     );
   }
 }
-
+ 
 export default Navbar;
