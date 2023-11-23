@@ -1,8 +1,10 @@
 import { createContext, Component } from "react";
 import PropTypes from "prop-types";
 
-export const ThemeContext = createContext();
 
+//this is the context that we create. & we use this to conusme the data that the provider is providing in the respected file.
+export const ThemeContext = createContext();
+//& this is the context provider.
 class ThemeContextProvider extends Component {
   state = {
     isLight: true,
