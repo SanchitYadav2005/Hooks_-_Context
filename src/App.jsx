@@ -4,6 +4,7 @@ import ToggleButton from "./components/ToggleButton";
 // here you have to import the provider not the context.
 import ThemeContextProvider from "./context/ThemeContext";
 import AuthContextProvider from "./context/AuthContext";
+import BookContextProvider from "./context/BookContext";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <ThemeContextProvider>
         <AuthContextProvider>
           <Navbar />
-          <BookList />
+          <BookContextProvider>
+            <BookList />
+          </BookContextProvider>
           <ToggleButton />
         </AuthContextProvider>
       </ThemeContextProvider>
